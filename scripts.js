@@ -14,15 +14,19 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+    // Check if inputs are numbers
+    const numDividend = Number(dividend);
+    const numDivider = Number(divider);
+
   //Zero Dividion Error handling
-  if(divider === 0){
+  if(numDivider === 0){
       result.innerText = "Error: Division by zero is not allowed. Please enter a non-zero value for the divisor.";
       console.trace()
       return;
   }
 
   //Check if any of the inputs are not numbers
-  if (isNaN(dividend) || isNaN(divider)) {
+  if (isNaN(numDividend) || isNaN(numDivider)) {
     // Replace entire screen with critical error message
     document.body.innerHTML = "<h1>Something critical went wrong.</h1>";
     console.error("Invalid input: One or both inputs are not valid numbers.");
@@ -30,5 +34,5 @@ form.addEventListener("submit", (event) => {
     return;
   }
     
-  result.innerText = Math.floor(dividend / divider); //Added math.floor to make sure the result is always rounded of to nearest interger
+  result.innerText = Math.floor(numDividend / numDivider); //Added math.floor to make sure the result is always rounded of to nearest interger
 });
