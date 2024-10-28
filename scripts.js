@@ -20,6 +20,15 @@ form.addEventListener("submit", (event) => {
       console.trace()
       return;
   }
+
+  //Check if any of the inputs are not numbers
+  if (isNaN(dividend) || isNaN(divider)) {
+    // Replace entire screen with critical error message
+    document.body.innerHTML = "<h1>Something critical went wrong.</h1>";
+    console.error("Invalid input: One or both inputs are not valid numbers.");
+    console.trace();
+    return;
+  }
     
   result.innerText = Math.floor(dividend / divider); //Added math.floor to make sure the result is always rounded of to nearest interger
 });
