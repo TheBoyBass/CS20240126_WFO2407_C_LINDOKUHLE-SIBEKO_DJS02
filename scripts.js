@@ -10,7 +10,7 @@ form.addEventListener("submit", (event) => {
 
   //Input validation
   if (!dividend || !divider) {
-    result.innerText = "Error: Division not performed. Both values are required in inputs. Try again";
+    result.innerText = "Error 224: Division not performed. Both values are required in inputs. Try again";
     return;
   }
 
@@ -20,7 +20,7 @@ form.addEventListener("submit", (event) => {
 
   //Zero Dividion Error handling
   if(numDivider === 0){
-      result.innerText = "Error: Division by zero is not allowed. Please enter a non-zero value for the divisor.";
+      result.innerText = "Error 457:Division not performed---Division by zero is not allowed.Try again";
       console.trace()
       return;
   }
@@ -28,7 +28,7 @@ form.addEventListener("submit", (event) => {
   //Check if any of the inputs are not numbers
   if (isNaN(numDividend) || isNaN(numDivider)) {
     // Replace entire screen with critical error message
-    document.body.innerHTML = "<h1>Something critical went wrong.</h1>";
+    document.body.innerHTML = "<h1>Error 876: Something critical went wrong. Please reload the page</h1>";
     console.error("Invalid input: One or both inputs are not valid numbers.");
     console.trace();
     return;
